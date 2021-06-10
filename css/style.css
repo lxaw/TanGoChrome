@@ -1,0 +1,28 @@
+/* Written (with love) by Lex Whalen */
+#div__data{
+    background-color: grey;
+}
+#div__util{
+    position:absolute;
+    bottom: 20px;
+}
+#footer{
+    position:absolute;
+    bottom:-20px;
+}
+#input__n{
+
+}
+#div__stats{
+    background-color: aqua;
+}
+/* Classes */
+.my_display{
+    background-color: white;
+    height:80px;
+}
+.my_btn{
+    color:red;
+    height:30px;
+    font-size:small;
+}

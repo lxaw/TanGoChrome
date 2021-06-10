@@ -1,0 +1,111 @@
+<!--   Written (with love) by Lex Whalen -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type = "text/css" href = "../bootstrap5.0.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type = "text/css" href = "../css/style.css">
+    <title>Popup</title>
+	<style>
+		body{
+				width:375px;
+				height:450px;
+				/* fonts */
+				font-family: 'Courier New', Courier, monospace;
+			}
+	</style>
+</head>
+<body>
+	<div class = "container m-0">
+		<div class = "row" id = "div__data">
+			<h6 id = "title__words">
+				Words
+			</h6>
+			<div class = "col-6" id = "words__display">
+				<textarea id="display__foundWords" class = "container m-0 my_display">
+					Now Loading...
+				</textarea>
+			</div>
+			<div class = "col-6" id = "words__btns">
+				<button class = "my_btn" id="words__topBtn">Top</button>
+				<button class = "my_btn" id="words__topBtn">Top</button>
+				<button class = "my_btn" id="words__topBtn">Top</button>
+				<button class = "my_btn" id="words__topBtn">Top</button>
+			</div>
+		</div>
+		<div class = "row" id = "div__data">
+			<h6 id = "title__kanji">
+				Kanji
+			</h6>
+			<div class = "col-6" id= "kanji__display">
+				<textarea id="display__foundKanji" class = "container m-0 my_display">
+					Now Loading...
+				</textarea>
+
+			</div>
+			<div class = "col-6" id = "kanji__btns">
+				<button class = "my_btn" id="words__topBtn">Top</button>
+				<button class = "my_btn" id="words__topBtn">Top</button>
+				<button class = "my_btn" id="words__topBtn">Top</button>
+				<button class = "my_btn" id="words__topBtn">Top</button>
+			</div>
+		</div>
+			
+		<div class = "row justify-content-center" id = "div__stats">
+			<h6>
+				Words
+			</h6>
+			<div class = "row" id = "div__statsWords">
+				<div class = "col-6" id = "div__statsWords__mostCommon">
+					<h6 id = "title__mostFreqWord">
+						Most Common
+					</h6>
+					<p id ="display__mostCommonWord">
+						Now Loading...
+					</p>
+				</div>
+				<div class = "col-6" id = "div__statsWords__leastCommon">
+					<h6 id = "title__leastFreqWord">
+						Least Common
+					</h6>
+					<p id ="display__leastCommonWord">
+						Now Loading...
+					</p>
+				</div>
+			</div>
+			<h6>
+				Kanji
+			</h6>
+			<div class = "row" id = "div__statsKanji">
+				<div class = "col-6" id = "div__statsKanji__mostCommon">
+					<h6 id = "title__mostFreqKanji">
+						Most Common
+					</h6>
+					<p id ="display__mostCommonKanji">
+						Now Loading...
+					</p>
+				</div>
+				<div class = "col-6" id = "div__statsKanji__leastCommon">
+					<h6 id = "title__leastFreqKanji">
+						Least Common
+					</h6>
+					<p id ="display__leastCommonKanji">
+						Now Loading...
+					</p>
+				</div>
+
+			</div>
+		</div>
+
+
+
+
+			<p id = "footer">Follow the GitHub!</p>
+	</div>
+		<!-- Popup script -->
+		<script src="../kuromoji/build/kuromoji.js"></script>
+		<script src="../js/popup.js"></script>
+</body>
+</html>
