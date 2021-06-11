@@ -12,6 +12,13 @@
 body{
     background-color: var(--vampire-black);
 }
+/* Links */
+a{
+    text-decoration: none;
+}
+a:hover{
+    color:#1ffc39;
+}
 
 /* Webkit */
 ::-webkit-scrollbar{
@@ -21,8 +28,8 @@ body{
     background:var(--scrollbar-thumb);
 }
 /* Ids */
-#footer{
-    color:#00530a;
+#div__footer{
+    text-align:right;
 }
 #display__title{
     color:#10a021;
@@ -57,7 +64,7 @@ body{
     /* background-color: orange; */
     color: var(--display-data-green);
     height:120px;
-    width:150px;
+    width:155px;
     overflow-y:scroll;
     overflow-x:hidden;
     margin:0px;
