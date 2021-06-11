@@ -23,44 +23,72 @@ var _html_display__leastCommonWord = document.getElementById("display__leastComm
 var _html_display__kanji = document.getElementById("display__foundKanji");
 var _html_display__mostCommonKanji = document.getElementById("display__mostCommonKanji");
 var _html_display__leastCommonKanji = document.getElementById("display__leastCommonKanji");
-// ************ Functions for the buttons ************
 
-
-// ************ Mapping buttons to functions ************
-_words__topBtn.addEventListener("click",()=>{
-
-})
+// btns
+var _btn__refresh = document.getElementById("btn__refresh");
 
 
 // ************ Static display data *************
+var _defaultRet = "None";
 // display the words
 function showWords(){
     // populates the words display
-    _html_display__words.innerText = _bgData.getSortedItemArr();
+    if(_bgData.getSortedWordArr() != undefined ||
+        _bgData.getSortedWordArr() != ""){
+        _html_display__words.innerText = _bgData.wordArrToStr();
+    }
+    else{
+        _html_display__words.innerText = _defaultRet;
+    }
 }
 // display the most common/least common word / kanji
 function showMostCommonWord(){
     // populates the most common word on the html
-    _html_display__mostCommonWord.innerText = _bgData.getMostCommonWord();
+    if(_bgData.getMostCommonWord() != undefined){
+        _html_display__mostCommonWord.innerText = _bgData.getMostCommonWord();
+    }
+    else{
+        _html_display__mostCommonWord.innerText = _defaultRet;
+    }
 }
 function showLeastCommonWord(){
     // populates the least common word on the html
-    _html_display__leastCommonWord.innerText = _bgData.getLeastCommonWord();
+    if(_bgData.getLeastCommonWord() != undefined){
+        _html_display__leastCommonWord.innerText = _bgData.getLeastCommonWord();
+    }
+    else{
+        _html_display__leastCommonWord.innerText = _defaultRet;
+    }
 }
 // display the kanji
 function showKanji(){
     // populates the kanji display
-    console.log("show kanji func");
-    console.log(_bgData.getSortedKanjiArr());
-    _html_display__kanji.innerText = _bgData.getSortedKanjiArr();
+    if(_bgData.getSortedKanjiArr() != undefined ||
+        _bgData.getSortedKanjiArr() != ""){
+        console.log(_bgData.kanjiArrToStr());
+        _html_display__kanji.innerText = _bgData.kanjiArrToStr();
+    }
+    else{
+        _html_display__kanji.innerText = _defaultRet;
+    }
 }
 function showMostCommonKanji(){
     // populates the most common kanji on the html
-    _html_display__mostCommonKanji.innerText = _bgData.getMostCommonKanji();
+    if(_bgData.getMostCommonKanji() != undefined){
+        _html_display__mostCommonKanji.innerText = _bgData.getMostCommonKanji();
+    }
+    else{
+        _html_display__mostCommonKanji.innerText = _defaultRet;
+    }
 }
 function showLeastCommonKanji(){
     // populates the least common kanji on the html
-    _html_display__leastCommonKanji.innerText = _bgData.getLeastCommonKanji();
+    if(_bgData.getLeastCommonKanji() != undefined){
+        _html_display__leastCommonKanji.innerText = _bgData.getLeastCommonKanji();
+    }
+    else{
+        _html_display__leastCommonKanji.innerText = _defaultRet;
+    }
 }
 
 // main app
@@ -76,3 +104,25 @@ function initMainApp(){
 }
 
 initMainApp();
+
+// ************ btns ************* 
+// functions
+function refreshBtnFunc(){
+    chrome.tabs.query({active:true,currentWindow:true},(tabs)=>{
+        chrome.tabs.sendMessage(tabs[0].id,{type:"refresh"});
+    })
+    var btnText = _btn__refresh.innerText;
+    _btn__refresh.innerText = "";
+    _btn__refresh.classList.add("loading"); 
+    setTimeout(()=>{
+        initMainApp();
+        _btn__refresh.classList.remove("loading");
+        _btn__refresh.innerText = btnText;
+    },2000);
+}
+
+// mapping to btns
+_btn__refresh.addEventListener("click",()=>{
+    console.log('click');
+    refreshBtnFunc();
+})

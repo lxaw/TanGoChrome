@@ -1,8 +1,14 @@
 {
-    "name":"kudoi",
-    "description": "don't forget the description!",
+    "name":"TanGo",
+    "description": "Simple and quick way to check word and kanji frequencies on the web.",
     "version": "0.001",
     "manifest_version": 2,
+    "icons":{
+        "16": "./images/16x16.png",
+        "32": "./images/32x32.png",
+        "48": "./images/48x48.png",
+        "128": "./images/128x128.png"
+    },
     "background": {
         "persistent":true,
         // MUST LOAD KUROMOJI FIRST!!!!!!
