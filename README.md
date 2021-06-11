@@ -25,3 +25,6 @@
 
 ###### :seedling: Ideas for Improvement:
 * See "To do"
+
+This extension would not be possible without the help of:
+https://github.com/takuyaa/kuromoji.js/
