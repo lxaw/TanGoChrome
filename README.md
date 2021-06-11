@@ -3,7 +3,7 @@
 ## Fast Frequency Data for Japanese
 
 ## :cinema: Video:
-* Coming soon!
+* Use video: https://youtu.be/Skhc9zpR9yU
 
 ## :grey_question: What is it?
 * This extension allows for a quick overview of the key words (most frequent) found in Japanese webpages.
