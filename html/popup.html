@@ -11,6 +11,9 @@
 	<style>
 		body{
 				width:375px;
+				max-width:375;
+				max-height:450;
+				overflow-y:hidden;
 				height:450px;
 				/* fonts */
 				font-family: 'Courier New', Courier, monospace;
@@ -19,84 +22,84 @@
 </head>
 <body>
 	<div class = "container m-0">
-		<div class = "row" id = "div__data">
-			<h6 id = "title__words">
-				Words
-			</h6>
-			<div class = "col-6" id = "words__display">
-				<textarea id="display__foundWords" class = "container m-0 my_display">
-					Now Loading...
-				</textarea>
-			</div>
-			<div class = "col-6" id = "words__btns">
-				<button class = "my_btn" id="words__topBtn">Top</button>
-				<button class = "my_btn" id="words__topBtn">Top</button>
-				<button class = "my_btn" id="words__topBtn">Top</button>
-				<button class = "my_btn" id="words__topBtn">Top</button>
-			</div>
+		<div class = "row text-center" id = "div__appTitle">
+			<h1 id = "app__title">
+				TanGo!
+			</h1>
 		</div>
+		
 		<div class = "row" id = "div__data">
-			<h6 id = "title__kanji">
-				Kanji
-			</h6>
+			<div class = "col-6" id = "words__display">
+				<h1 id="display__title">
+					Words
+				</h1>
+				<p id="display__foundWords" class = "container m-0 my_display">
+					Loading...
+				</p>
+			</div>
 			<div class = "col-6" id= "kanji__display">
-				<textarea id="display__foundKanji" class = "container m-0 my_display">
-					Now Loading...
-				</textarea>
+				<h1 id="display__title">
+					Kanji
+				</h1>
+				<p id="display__foundKanji" class = "container m-0 my_display">
+					Loading...
+				</p>
 
 			</div>
-			<div class = "col-6" id = "kanji__btns">
-				<button class = "my_btn" id="words__topBtn">Top</button>
-				<button class = "my_btn" id="words__topBtn">Top</button>
-				<button class = "my_btn" id="words__topBtn">Top</button>
-				<button class = "my_btn" id="words__topBtn">Top</button>
-			</div>
+		</div>
+		<!-- Break -->
+		<div class = "row" id ="div__break">
 		</div>
 			
 		<div class = "row justify-content-center" id = "div__stats">
-			<h6>
+			<h1 id="display__title">
 				Words
-			</h6>
-			<div class = "row" id = "div__statsWords">
+			</h1>
+			<div class = "row justify-content-center" id = "div__statsWords">
 				<div class = "col-6" id = "div__statsWords__mostCommon">
 					<h6 id = "title__mostFreqWord">
 						Most Common
 					</h6>
-					<p id ="display__mostCommonWord">
-						Now Loading...
+					<p id ="display__mostCommonWord" class = "mostLeastCommon">
+						 Loading...
 					</p>
 				</div>
 				<div class = "col-6" id = "div__statsWords__leastCommon">
 					<h6 id = "title__leastFreqWord">
 						Least Common
 					</h6>
-					<p id ="display__leastCommonWord">
-						Now Loading...
+					<p id ="display__leastCommonWord" class = "mostLeastCommon">
+						 Loading...
 					</p>
 				</div>
 			</div>
-			<h6>
+			<h1 id="display__title">
 				Kanji
-			</h6>
-			<div class = "row" id = "div__statsKanji">
+			</h1>
+			<div class = "row justify-content-center" id = "div__statsKanji">
 				<div class = "col-6" id = "div__statsKanji__mostCommon">
 					<h6 id = "title__mostFreqKanji">
 						Most Common
 					</h6>
-					<p id ="display__mostCommonKanji">
-						Now Loading...
+					<p id ="display__mostCommonKanji" class = "mostLeastCommon">
+						 Loading...
 					</p>
 				</div>
 				<div class = "col-6" id = "div__statsKanji__leastCommon">
 					<h6 id = "title__leastFreqKanji">
 						Least Common
 					</h6>
-					<p id ="display__leastCommonKanji">
-						Now Loading...
+					<p id ="display__leastCommonKanji" class = "mostLeastCommon">
+						 Loading...
 					</p>
 				</div>
 
 			</div>
+		</div>
+		<div id = "div__btns">
+			<btn class = "btn my_btn" id="btn__refresh">
+				Refresh
+			</btn>
 		</div>
 
 

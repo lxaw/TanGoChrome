@@ -46,7 +46,7 @@ class displayData{
         this._dataStr;
         // we have to tokenize in the popup.js
         this._tokenArr;
-        this._sortedItemArr;
+        this._sortedWordArr;
 
         // for kanji
         this._kanjiArr;
@@ -82,20 +82,51 @@ class displayData{
             // set the token array we just made
             this.setTokenArr(token_arr);
             // set the sorted item arr from the token array
-            this.setSortedItemArr(this.getTokenArr());
+            this.setSortedWordArr(this.getTokenArr());
         })
     }
     getResponse(){
         // we can grab the data from here
         // we sent a payload of format: [wordStr, kanjiArr]
         chrome.runtime.onMessage.addListener((payload,sender,sendResponse)=>{
-            console.log('in background: response');
             // for debugging
+            console.log('background: received response')
             // console.log(response);
             // now that we got message update db
             this.updateDatabase(payload);
         });
     } 
+    // prepping the arrays for sending to html
+    wordArrToStr(){
+        var str = "";
+        if(this._sortedWordArr != undefined){
+            this._sortedWordArr.forEach((sub_arr)=>{
+                var word = sub_arr[0].toString();
+                var freq = sub_arr[1].toString();
+                // we pad the word if it is not length 4 or greater for view
+                if(word.length < 4){
+                    var diff = 4 - word.length;
+                    word = word.padEnd(4,' ');
+                    console.log(word + ":");
+                }
+                var sub_string = word + " : " + freq;
+                str += sub_string;
+                str += "\n";
+            });
+        }
+        return str;
+    }
+    kanjiArrToStr(){
+        var str = "";
+        if(this._sortedKanjiArr != undefined){
+            this._sortedKanjiArr.forEach((sub_arr)=>{
+                var sub_string = sub_arr[0] + " : " + sub_arr[1];
+                str += sub_string;
+                str += "\n";
+            });
+        }
+        return str;
+    }
     // Getters and Setters
     getMostCommonKanji(){
         if(this._sortedKanjiArr == undefined){
@@ -107,22 +138,25 @@ class displayData{
         if(this._sortedKanjiArr == undefined){
             return;
         }
-        return this._sortedKanjiArr.pop();
+        return this._sortedKanjiArr[this._sortedKanjiArr.length-1];
     }
     getSortedKanjiArr(){
+        if(this._sortedKanjiArr == undefined){
+            return;
+        }
         return this._sortedKanjiArr;
     }
     getMostCommonWord(){
-        if(this._sortedItemArr == undefined){
+        if(this._sortedWordArr == undefined){
             return;
         }
-        return this._sortedItemArr[0];
+        return this._sortedWordArr[0];
     }
     getLeastCommonWord(){
-        if(this._sortedItemArr == undefined){
+        if(this._sortedWordArr == undefined){
             return;
         }
-        return this._sortedItemArr.pop();
+        return this._sortedWordArr[this._sortedWordArr.length -1];
     }
     getDoneBuilding(){
         return this._doneBuilding;
@@ -133,12 +167,12 @@ class displayData{
         }
         this._kanjiArr = anArr;
     }
-    setSortedItemArr(anArr){
+    setSortedWordArr(anArr){
         if(anArr == undefined){
             return;
         }
         var hm = new HashMap(anArr);
-        this._sortedItemArr = hm.getSortArr();
+        this._sortedWordArr = hm.getSortArr();
     }
     setSortedKanjiArr(anArr){
         if(anArr == undefined){
@@ -147,8 +181,11 @@ class displayData{
         var hm = new HashMap(anArr);
         this._sortedKanjiArr = hm.getSortArr();
     }
-    getSortedItemArr(){
-        return this._sortedItemArr;
+    getSortedWordArr(){
+        if(this._sortedWordArr == undefined){
+            return;
+        }
+        return this._sortedWordArr;
     }
     setDataStr(aStr){
         this._dataStr = aStr;
@@ -163,6 +200,5 @@ class displayData{
         return this._dataStr;
     }
 }
-
 var data = new displayData();
 data.getResponse();

@@ -1,6 +1,6 @@
 console.log('in content script');
-var body_text_raw = document.body.innerText;
 
+var body_text_raw = document.body.innerText;
 function isKana(ch){
     // first check is for hira, second is kata
     return (ch >= "\u3040" && ch <= "\u309f") || 
@@ -41,10 +41,21 @@ function jKanjiArrBuilder(aStr){
     return kanji_arr;
 }
 
-var stripped_jChars = jStrBuilder(body_text_raw);
-var stripped_kanji = jKanjiArrBuilder(body_text_raw);
-// send to background script
-var payload = [stripped_jChars,stripped_kanji];
+function refreshPage(){
+    var stripped_jChars = jStrBuilder(body_text_raw);
+    var stripped_kanji = jKanjiArrBuilder(body_text_raw);
+    // send to background script
+    var payload = [stripped_jChars,stripped_kanji];
 
-chrome.runtime.sendMessage(payload);
+    chrome.runtime.sendMessage(payload);
+}
+chrome.runtime.onMessage.addListener(msgObj =>{
+    console.log(msgObj)
+    if(msgObj.type == "refresh"){
+        console.log("msgObj type is refresh")
+        refreshPage();
+    }
+});
+refreshPage();
+
 
