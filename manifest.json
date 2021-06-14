@@ -11,8 +11,6 @@
     },
     "background": {
         "persistent":true,
-        // MUST LOAD KUROMOJI FIRST!!!!!!
-        // loads in order of injection!
         "scripts": ["./kuromoji/build/kuromoji.js",
             "./js/background.js"
             ]
@@ -30,11 +28,5 @@
     "options_page": "./html/options.html",
     "browser_action":{
         "default_popup":"./html/popup.html"
-    },
-    // required permissions
-    // everything extension needs access to
-    "permissions":[
-        "notifications",
-        "tabs"
-    ]
+    }
 }
