@@ -30,5 +30,5 @@ This extension would not be possible without the help of:
 https://github.com/takuyaa/kuromoji.js/
 
 Installation:
-* Via Chrome: Once it is available on the Chrome Extension page, I will post the link here.
+* Via Chrome: https://chrome.google.com/webstore/detail/tango/childjcagcbmjcphnacbgmlbeddmgljd/related
 * Via Package: Download the repo into a folder. Then go into Chrome's extension settings, and click the "add package" prompt. Then find the folder and add it. Voila!
