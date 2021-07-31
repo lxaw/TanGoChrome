@@ -1,0 +1,118 @@
+<!--   Written (with love) by Lex Whalen -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type = "text/css" href = "../bootstrap5.0.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type = "text/css" href = "../css/style.css">
+    <title>Popup</title>
+	<style>
+		body{
+				width:375px;
+				max-width:375;
+				max-height:450;
+				overflow-y:hidden;
+				height:450px;
+				/* fonts */
+				font-family: 'Courier New', Courier, monospace;
+			}
+	</style>
+</head>
+<body>
+	<div class = "container m-0">
+		<div class = "row text-center" id = "div__appTitle">
+			<h1 id = "app__title">
+				TanGo!
+			</h1>
+		</div>
+		
+		<div class = "row" id = "div__data">
+			<div class = "col-6" id = "words__display">
+				<h1 id="display__title">
+					Words
+				</h1>
+				<p id="display__foundWords" class = "container m-0 my_display">
+					Loading...
+				</p>
+			</div>
+			<div class = "col-6" id= "kanji__display">
+				<h1 id="display__title">
+					Kanji
+				</h1>
+				<p id="display__foundKanji" class = "container m-0 my_display">
+					Loading...
+				</p>
+
+			</div>
+		</div>
+		<!-- Break -->
+		<div class = "row" id ="div__break">
+		</div>
+			
+		<div class = "row justify-content-center" id = "div__stats">
+			<h1 id="display__title">
+				Words
+			</h1>
+			<div class = "row justify-content-center" id = "div__statsWords">
+				<div class = "col-6" id = "div__statsWords__mostCommon">
+					<h6 id = "title__mostFreqWord">
+						Most Common
+					</h6>
+					<p id ="display__mostCommonWord" class = "mostLeastCommon">
+						 Loading...
+					</p>
+				</div>
+				<div class = "col-6" id = "div__statsWords__leastCommon">
+					<h6 id = "title__leastFreqWord">
+						Least Common
+					</h6>
+					<p id ="display__leastCommonWord" class = "mostLeastCommon">
+						 Loading...
+					</p>
+				</div>
+			</div>
+			<h1 id="display__title">
+				Kanji
+			</h1>
+			<div class = "row justify-content-center" id = "div__statsKanji">
+				<div class = "col-6" id = "div__statsKanji__mostCommon">
+					<h6 id = "title__mostFreqKanji">
+						Most Common
+					</h6>
+					<p id ="display__mostCommonKanji" class = "mostLeastCommon">
+						 Loading...
+					</p>
+				</div>
+				<div class = "col-6" id = "div__statsKanji__leastCommon">
+					<h6 id = "title__leastFreqKanji">
+						Least Common
+					</h6>
+					<p id ="display__leastCommonKanji" class = "mostLeastCommon">
+						 Loading...
+					</p>
+				</div>
+
+			</div>
+		</div>
+		<div id = "div__btns">
+			<btn class = "btn my_btn" id="btn__refresh">
+				Refresh
+			</btn>
+		</div>
+
+
+
+
+		<div id="div__footer">
+			<a href="https://github.com/LexingtonWhalen/TanGoChrome" target="_blank">
+				GitHub
+			</a>
+		</div>
+	</div>
+		<!-- Popup script -->
+		<script src="../kuromoji/build/kuromoji.js"></script>
+		<script src="../js/popup.js"></script>
+</body>
+</html>

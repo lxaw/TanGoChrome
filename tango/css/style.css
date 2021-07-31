@@ -1,0 +1,111 @@
+/* Written (with love) by Lex Whalen */
+
+/* Vars */
+:root{
+    --vampire-black: #0D0208;
+    --display-data-green:#01da1a;
+    --display-data-dullGreen:#ffffff;
+    --scrollbar-thumb:white;
+
+}
+/* Body */
+body{
+    background-color: var(--vampire-black);
+}
+/* Links */
+a{
+    text-decoration: none;
+}
+a:hover{
+    color:#1ffc39;
+}
+
+/* Webkit */
+::-webkit-scrollbar{
+    width:20px;
+}
+::-webkit-scrollbar-thumb{
+    background:var(--scrollbar-thumb);
+}
+/* Ids */
+#div__footer{
+    text-align:right;
+}
+#display__title{
+    color:#10a021;
+    font-size:25px;
+}
+#app__title{
+    color:#02db1b;
+}
+#display__foundWords{
+    color:var(--display-data-dullGreen);
+}
+#display__foundKanji{
+    color:var(--display-data-dullGreen);
+}
+#div__data{
+    /* background-color: yellow; */
+}
+#div__util{
+    position:absolute;
+    bottom: 20px;
+}
+#div__stats{
+    color:var(--display-data-green);
+    /* background-color: pink; */
+    padding-top:10px;
+}
+#div__break{
+    height:10px;
+}
+/* Classes */
+.my_display{
+    /* background-color: orange; */
+    color: var(--display-data-green);
+    height:120px;
+    width:155px;
+    overflow-y:scroll;
+    overflow-x:hidden;
+    margin:0px;
+}
+.mostLeastCommon{
+    color:white;
+}
+.my_btn{
+    text-align: center;
+    width:100px;
+    min-width: auto;
+    color:var(--display-data-green);
+    padding:5px;
+    background-color: var(--vampire-black);
+    border-radius: 0px;
+    border-color:white;
+}
+.my_btn:hover{
+    color:white;
+}
+/* for loading display */
+/* Credit: https://codepen.io/vkjgr/pen/gbPaVx */
+.loading:after {
+    content: ' . ';
+    animation: dots 1s steps(5, end) infinite;}
+@keyframes dots {
+    0%, 20% {
+        color: rgba(0,0,0,0);
+        text-shadow:
+        0px 0 0 rgba(0,0,0,0),
+        4px 0 0 rgba(0,0,0,0);}
+    40% {
+        color: white;
+        text-shadow:
+        0px 0 0 rgba(0,0,0,0),
+        4px 0 0 rgba(0,0,0,0);}
+    60% {
+        text-shadow:
+        0px 0 0 white,
+        4px 0 0 rgba(0,0,0,0);}
+    80%, 100% {
+        text-shadow:
+        0px 0 0 white,
+        4px 0 0 white;}}
