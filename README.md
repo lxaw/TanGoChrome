@@ -32,3 +32,6 @@ https://github.com/takuyaa/kuromoji.js/
 Installation:
 * Via Chrome: https://chrome.google.com/webstore/detail/tango/childjcagcbmjcphnacbgmlbeddmgljd/related
 * Via Package: Download the repo into a folder. Then go into Chrome's extension settings, and click the "add package" prompt. Then find the folder and add it. Voila!
+
+## ❤️ How to Support ❤️
+- If this code or anyother I have written has helped you, feel free to make a donation at https://www.buymeacoffee.com/whalenlexn.
